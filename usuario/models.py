@@ -15,13 +15,17 @@ class Usuario(models.Model):
     usr_email = models.EmailField(max_length=254)
     usr_telefone = models.IntegerField(null=False, blank=False)
     usr_senha = models.CharField(max_length=100,null=False, blank=False)
-    usr_avatar = models.ImageField(upload_to=None, height_field=400, width_field=400)
-    usr_capa = models.ImageField(upload_to=None)
+    #usr_avatar = models.ImageField(upload_to=None, height_field=400, width_field=400)
+    #usr_capa = models.ImageField(upload_to=None)
     usr_bio = models.TextField(max_length=240)
-    usr_projeto = models.ForeignKey("projetos.Projeto",on_delete=models.CASCADE,null=True)
-    usr_equipe = models.ForeignKey("equipe.Equipe", on_delete=models.CASCADE, null=True)
+    #usr_projeto = models.ForeignKey("projetos.Projeto",on_delete=models.CASCADE,null=True)
+    #usr_equipe = models.ForeignKey("equipe.Equipe", on_delete=models.CASCADE, null=True)
     #Entendemos desta forma/Talvez precisa corrigir
-    usr_likes = models.ManyToManyField("organizacao.Organizacao", related_name = 'likes')
-    usr_matchs = models.ManyToManyField("organizacao.Organizacao")
-    usr_plano = models.BooleanField(default=False)
-    usr_post = models.ForeignKey("posts.Post",on_delete=models.CASCADE)
+    #usr_likes = models.ManyToManyField("organizacao.Organizacao", related_name = 'likes')
+    #usr_matchs = models.ManyToManyField("organizacao.Organizacao")
+    #usr_plano = models.BooleanField(default=False)
+    #usr_post = models.ForeignKey("posts.Post",on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.usr_nome
+    

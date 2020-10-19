@@ -11,8 +11,8 @@ class Post(models.Model):
     pst_data_modificado = models.DateTimeField(auto_now_add=True)
     pst_conteudo = models.TextField(max_length=1000, null = False,blank=False)
     #pst_likes = ???
-    pst_comentarios = models.TextField(max_length=400)#como faria para relacionar com algum usuario??
+    #pst_comentarios = models.TextField(max_length=400)como faria para relacionar com algum usuario??
     #pst_compartilhamentos = ???
 
-    def __str__():
-        return self.pst_criador.usr_nome
+    def __str__(self):
+        return str(self.pst_id)
